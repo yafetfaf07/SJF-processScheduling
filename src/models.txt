@@ -1,0 +1,13 @@
+process = {
+    id: ,
+    arrivalTime: ,
+    burstTime: ,
+}
+
+calculatedProcess = {
+    waitingTime: ,
+    TurnAroundTime: ,
+    CompletionTime: ,
+    ResponseTime: ,
+}
+
