@@ -44,34 +44,7 @@ function App() {
       b2: 7,
       b3: 4,
       b4: 6,
-    }, 
-    {
-      b1:8,
-      b2:6,
-      b3:4,
-      b4:2
     },
-    {
-      b1:20,
-      b2:15,
-      b3:40,
-      b4:50
-    }, {
-      b1:6,
-      b2:9,
-      b3:5,
-      b4:7
-    }, {
-      b1:1,
-      b2:8,
-      b3:6,
-      b4:6
-    }, {
-      b1:3,
-      b2:3,
-      b3:3,
-      b4:7
-    }
   ];
   // for(let i=0; i<nums.length; i++) {
   //   settotalbursttime(nums[i].b1+nums[i].b2 + nums[i].b3 + nums[i].b4);
@@ -93,6 +66,10 @@ function App() {
     new Process("p1", 0, nums[index].b1),
   ];
 
+  // let p = new Process('p1',0,8);
+  // let p2= new Process('p2',5,4);
+  // let p3 = new Process('p3',2,9);
+  // let p4 = new Process('p4',7,10)
 
   let displayedData = listOfProcess.sort(
     (a, b) => a.arrivalTime - b.arrivalTime
@@ -109,25 +86,31 @@ function App() {
         listOfProcess[i].burstTime
       );
     }
-    listOfProcess[i].waitingTime();
-    listOfProcess[i].TurnAroundTime();
-    listOfProcess[i].CompletionTime();
-    listOfProcess[i].ResponseTime();
   }
 
-  // for (let i = 0; i < listOfProcess.length; i++) {
-  //   console.log("Hallleedasdasdasdasdasda");
-  //   console.log("burstTime ", listOfProcess[i].burstTime);
-  //   console.log("arrivalTime ", listOfProcess[i].arrivalTime);
+  // let x=listOfProcess[1].StartTime(listOfProcess[0].startTime, listOfProcess[0].burstTime)
+  // let y=listOfProcess[2].StartTime(listOfProcess[1].startTime, listOfProcess[1].burstTime)
+  // let z=listOfProcess[3].StartTime(listOfProcess[2].startTime, listOfProcess[2].burstTime);
+  // let a=listOfProcess[4].StartTime(listOfProcess[3].startTime, listOfProcess[3].burstTime);
 
-  //   console.log("Waiting time", listOfProcess[i].waitingTime());
-  //   console.log("TurnAround time", listOfProcess[i].TurnAroundTime());
-  //   console.log("Completion time", listOfProcess[i].CompletionTime());
-  //   console.log("Response time", listOfProcess[i].ResponseTime());
+  // x;
+  // y;
+  // z;
 
-  //   console.log("ENDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
-  // }
+  for (let i = 0; i < listOfProcess.length; i++) {
+    console.log("Hallleedasdasdasdasdasda");
+    console.log("burstTime ", listOfProcess[i].burstTime);
+    console.log("arrivalTime ", listOfProcess[i].arrivalTime);
 
+    console.log("Waiting time", listOfProcess[i].waitingTime());
+    console.log("TurnAround time", listOfProcess[i].TurnAroundTime());
+    console.log("Completion time", listOfProcess[i].CompletionTime());
+    console.log("Response time", listOfProcess[i].ResponseTime());
+
+    console.log("ENDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
+  }
+
+  // console.log(listOfProcess)
   return (
     <>
       <div className="flex flex-col mx-auto w-[400px] item-center justify-center gap-3">
@@ -184,7 +167,7 @@ function App() {
         </tbody>
       </table>
       <div className="mx-auto w-[600px] flex justify-center items-center mt-10">
-        {listOfProcess.map((d, i) => {
+        {displayedData.map((d, i) => {
           return (
             <>
               <div
